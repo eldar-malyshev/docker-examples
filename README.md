@@ -1,23 +1,37 @@
-# PHP & MySQL 
+# PHP & MySQL with Docker Compose
 
-This project runs using Docker Compose.
+This project runs PHP and MySQL services using Docker Compose.
+
+## Setup
+
+1. Copy the example environment file:
+
+```bash
+cp .env.example .env
+```
+
+2. Edit `.env` with your MySQL credentials. **Do not commit this file to version control.**
+
+```dotenv
+MYSQL_ROOT_PASSWORD=root123
+MYSQL_DATABASE=myapp
+MYSQL_USER=user
+MYSQL_PASSWORD=password123
+```
 
 ## Running the Stack
 
-To start the entire stack, run:
-
 Start the stack:
-
+```bash
 docker compose up
+```
 
 Stop the stack:
-
+```bash
 docker compose down
+```
 
 ## Services
 
-### phpMyAdmin
-
-phpMyAdmin is available at:
-
-http://localhost:8080/
+- **MySQL**: The database service storing your application data.
+- **phpMyAdmin**: Accessible at http://localhost:8080/ for managing MySQL via a web interface.
