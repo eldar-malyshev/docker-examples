@@ -35,3 +35,7 @@ docker compose down
 
 - **MySQL**: The database service storing your application data.
 - **phpMyAdmin**: Accessible at http://localhost:8080/ for managing MySQL via a web interface.
+
+## Network and Healthcheck
+
+This setup uses an explicit Docker network named `app` to allow seamless communication between services. The `phpMyAdmin` service depends on the `MySQL` service being healthy before starting, ensuring reliable connectivit
