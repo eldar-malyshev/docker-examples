@@ -12,6 +12,11 @@ services:
       - mysql-data:/var/lib/mysql
     networks:
       - app
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot123"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
